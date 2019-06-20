@@ -1,0 +1,20 @@
+# Rime wubi86 settings
+# encoding: utf-8
+
+patch:
+  switches:
+    - name: ascii_mode
+      reset: 0
+    - name: simplification
+      states: [ 简体, 繁体 ]
+
+  simplifier/opencc_config: s2t.json
+
+  engine/filters:
+    - simplifier
+    - uniquifier
+
+  speller/max_code_length: 4  #最长四码
+  speller/auto_select: true # 顶字上屏
+  speller/auto_select_unique_candidate: true # 无重码自动上屏
+

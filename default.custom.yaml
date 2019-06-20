@@ -1,0 +1,26 @@
+# default.custom.yaml
+# encoding: utf-8
+
+patch:
+  switcher:
+    caption: (输入法选择) 
+    hotkeys:
+    - Control+grave
+
+  # 候选词 5 个
+  menu:
+    page_size: 5
+
+  schema_list:
+  - schema: wubi86               # 五笔86
+  - schema: pinyin_simp          # 袖珍拼音
+
+  ascii_composer:
+    good_old_caps_lock: true
+    switch_key:
+      Shift_L: noop             # 关闭shift切换中英文项，使用commit_code打开
+      Shift_R: noop
+      Control_L: noop
+      Control_R: noop
+      Caps_Lock: noop
+      Eisu_toggle: clear

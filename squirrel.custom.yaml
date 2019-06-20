@@ -1,0 +1,64 @@
+# squirrel.custom.yaml
+# encoding: utf-8
+
+patch:
+
+  show_notifications_when: appropriate  # 状态通知，适当，也可设为全开（always）全关（never）
+
+  style:
+      horizontal: true
+      inline_preedit: true # 内嵌编码(不内嵌的话，输入的编码在面板单独一行)
+
+  # 输入法面板细节相关
+
+  us_keyboard_layout: true
+  style/display_tray_icon: true
+  style/font_face: "Helvetica"
+  style/spacing: 5
+
+  # 输入法在某些应用下，默认用英文〔方案选单〕 
+
+  app_options:
+      {}
+
+  # 输入法面板配色方案
+  style/color_scheme: darkskin    # 這項用於選中下面定義的新方案
+  preset_color_schemes/darkskin:  # 在配色方案列表裏加入標識爲 darkskin 的新方案
+    name: darkskin
+    author: Arch Zhu
+    text_color: 0xbdc3c7             # 編碼行文字顏色，24位色值，用十六進制書寫方便些，順序是藍綠紅0xBBGGRR
+    back_color: 0x1b1b1b             # 底色
+    border_color: 0x1010a0           # 邊框顏色，與底色相同則爲無邊框的效果
+    hilited_candidate_text_color: 0x6cb68b  # 高亮候選項的文字顏色，要醒目！
+    hilited_candidate_back_color: 0x1b1b1b  # 高亮候選項的底色，若與背景色不同就會顯出光棒
+    # hilited_candidate_text_color: 0x1b1b1b  # 高亮候選項的文字顏色，要醒目！
+    # hilited_candidate_back_color: 0x6cb68b  # 高亮候選項的底色，若與背景色不同就會顯出光棒
+    # hilited_text_color: 0xfecb96     # 输入码顔色
+    # hilited_back_color: 0x000000     # 输入码背景色
+    candidate_text_color: 0xbdc3c7   # 候选项顔色
+    comment_text_color: 0x808080      # 候选项推荐顔色
+    text_color: 0xc2c2c2
+    font_face: "Helvetica"
+    font_point: 14
+    border_height: 0
+    border_width: 0
+    corner_radius: 4
+  preset_color_schemes/whiteskin:
+    author: "ArchZhu"
+    back_color: 0xeeeeee
+    candidate_format: "%c %@"
+    candidate_text_color: 0x000000
+    comment_text_color: 0x808080
+    hilited_candidate_back_color: 0xeeeeee
+    hilited_candidate_label_color: 0xa0c98915
+    hilited_candidate_text_color: 0xc98915
+    hilited_text_color: 0x000000
+    horizontal: true
+    label_color: 0x888888
+    name: "Whitedark"
+    text_color: 0x808080
+    font_face: "Helvetica"
+    font_point: 14
+    border_height: 0
+    border_width: 0
+    corner_radius: 4
