@@ -7,12 +7,12 @@ __build_info:
     key_bindings.custom: 0
     punctuation: 1562679475
     punctuation.custom: 0
-    wubi86.custom: 1560948536
-    wubi86.schema: 1560947925
+    stroke.custom: 0
+    stroke.schema: 1562679474
+abc_segmentor:
+  extra_tags:
+    - reverse_lookup
 engine:
-  filters:
-    - simplifier
-    - uniquifier
   processors:
     - ascii_composer
     - recognizer
@@ -66,7 +66,7 @@ key_binder:
     - {accept: "Control+Shift+percent", toggle: extended_charset, when: always}
   import_preset: default
 menu:
-  page_size: 5
+  page_size: 9
 punctuator:
   full_shape:
     " ": {commit: "　"}
@@ -140,49 +140,49 @@ recognizer:
   import_preset: default
   patterns:
     email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
-    reverse_lookup: "^z[a-z]*'?$"
+    reverse_lookup: "`[a-z]*'?$"
     uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
 reverse_lookup:
-  dictionary: pinyin_simp
+  comment_format:
+    - "xlit/hspnz/一丨丿丶乙/"
+  dictionary: luna_pinyin
   preedit_format:
     - "xform/([nl])v/$1ü/"
     - "xform/([nl])ue/$1üe/"
     - "xform/([jqxy])v/$1u/"
-  prefix: z
+  prefix: "`"
   suffix: "'"
   tips: "〔拼音〕"
 schema:
   author:
-    - "發明人 王永民先生"
+    - "四季的風"
+    - "雪齋"
+    - "Kunki Chou"
   dependencies:
-    - pinyin_simp
+    - luna_pinyin
   description: |
-    五筆字型86版
-    碼表源自 ibus-table
-    敲 z 鍵進入拼音反查
+    五筆畫
+    h,s,p,n,z 代表橫、豎、撇、捺、折
     
-  name: "五笔86"
-  schema_id: wubi86
-  version: 0.21
-simplifier:
-  opencc_config: s2t.json
+  name: "五筆畫"
+  schema_id: stroke
+  version: 0.5
 speller:
-  auto_select: true
-  auto_select_unique_candidate: true
-  delimiter: " ;'"
-  max_code_length: 4
+  alphabet: abcdefghijklmnopqrstuvwxyz
+  delimiter: " '"
 switches:
   - name: ascii_mode
     reset: 0
-  - name: simplification
-    states: ["简体", "繁体"]
+    states: ["中文", "西文"]
+  - name: full_shape
+    states: ["半角", "全角"]
+  - name: ascii_punct
+    states: ["。，", "．，"]
 translator:
-  dictionary: wubi86
-  disable_user_dict_for_patterns:
-    - "^z.*$"
-  enable_charset_filter: true
-  enable_encoder: true
-  enable_sentence: true
-  encode_commit_history: true
-  max_phrase_length: 4
+  comment_format:
+    - "xform/~//"
+    - "xlit/hspnz/一丨丿丶乙/"
+  dictionary: stroke
+  preedit_format:
+    - "xlit/hspnz/一丨丿丶乙/"

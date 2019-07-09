@@ -1,12 +1,12 @@
 __build_info:
-  rime_version: 1.5.1
+  rime_version: 1.5.3
   timestamps:
-    squirrel: 1560947257
+    squirrel: 1562679474
     squirrel.custom: 1560956628
 app_options:
   {}
 chord_duration: 0.1
-config_version: 0.33
+config_version: 0.34
 preset_color_schemes:
   apathy:
     author: "LIANG Hai"
